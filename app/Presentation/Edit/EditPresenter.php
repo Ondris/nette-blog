@@ -25,6 +25,8 @@ final class EditPresenter extends Nette\Application\UI\Presenter {
 	if (!$post) {
             $this->error('Post not found');
 	}
+        
+        $this->template->id = $id;
 
 	$this->getComponent('postForm')
 		->setDefaults($post->toArray());
